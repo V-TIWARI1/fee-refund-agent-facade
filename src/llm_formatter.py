@@ -26,6 +26,7 @@ def format_response_to_html(backend_response: str) -> str:
         - Proper padding and margin for all elements to ensure readability and structure.
 
         2. Content formatting rules:
+        - Show all accounts and transactions in a **responsive table** with checkbox for selection but keep checkbox and have filtering option for account number , date and eligibility.
         - If the response is **plain text**, wrap it in a visually styled `<div>`.
         - If the response is a **list**, use a semantic `<ul>` with appropriate spacing.
         - If the response is a **table**, structure it with `<table>`, including headers and rows styled for readability.
