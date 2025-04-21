@@ -36,4 +36,5 @@ async def post_chat(request: Request):
     
     content = backend_data.get("response", "")
     html = format_response_to_html(content)
+    print(f"\nGenerated HTML (Response):\n{html}\n") 
     return { "html": html }
