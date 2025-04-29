@@ -25,16 +25,19 @@ def format_response_to_html(backend_response: str) -> str:
               - Proper padding and margin for all elements to ensure readability and structure.
             2. Content formatting rules:
               - Show all accounts and transactions in a **responsive table** with checkbox for selection.
+              - do not use radio button of seperate button for each account or transaction it must be tabular list with check boxes
+              - while displaying account number make each acount is selectable ireespective of their balance 
               - while displaying transaction is fee is already refunded make sure corrsponding check-box is disabled and can not be selected
               - while displaying transactions for multiple account, display multiple table for each account  
               - If the response is **plain text**, wrap it in a visually styled `<div>`.
               - If the response is a **list**, use a semantic `<ul>` with appropriate spacing.
               - If the response is a **table**, structure it with `<table>`, including headers and rows styled for readability.
-              - If user input or selection is required, use only **non-text inputs** like checkboxes, radio buttons, or dropdowns. Avoid text inputs.
+              - If user input or selection is required, use only **non-text inputs** like checkboxes. Avoid text inputs.
               - If user input or selection is required add small heading on top asking use to select accounts or transactions.
+              - If user input or selection is required add small make sure to add a button, by clicking it user will submit input
               - If no input is required, do not include any `<script>` tags.
             3. User interaction:
-              - When user input is involved, include a `<script>` that listens for changes or button clicks.
+              - When user input is involved, include a `<script>` that listens for changes or button clicks only.
               - On interaction, send a message using `window.parent.postMessage(...)` with the format:
                   ```js
                   { type: 'proceed', data: '...summary of selected input...' }
